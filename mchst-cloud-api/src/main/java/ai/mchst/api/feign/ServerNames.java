@@ -7,5 +7,5 @@ public interface ServerNames {
     /**
      * maku-cloud-system 服务名
      */
-    String SYSTEM_SERVER_NAME = "maku-cloud-system";
+    String SYSTEM_SERVER_NAME = "mchst-cloud-system";
 }

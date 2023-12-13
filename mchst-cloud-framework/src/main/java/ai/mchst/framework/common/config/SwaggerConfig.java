@@ -1,6 +1,7 @@
 package ai.mchst.framework.common.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.SpecVersion;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
@@ -26,16 +27,16 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI customOpenAPI() {
         Contact contact = new Contact();
-        contact.setName("mchst.ai");
+        contact.setName("ai.mchst");
 
-        return new OpenAPI().info(new Info()
+        return new OpenAPI(SpecVersion.V30).info(new Info()
                 .title("MchstCloud")
                 .description("MchstCloud")
                 .contact(contact)
                 .version("1.0")
-                .termsOfService("https://mchst.ai")
+                .termsOfService("http://mchst.ai")
                 .license(new License().name("xxx")
-                        .url("https://mchst.ai")));
+                        .url("http://mchst.ai")));
     }
 
 }

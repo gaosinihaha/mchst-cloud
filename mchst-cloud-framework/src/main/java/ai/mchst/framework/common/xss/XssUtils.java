@@ -6,9 +6,6 @@ import org.jsoup.safety.Safelist;
 
 /**
  * XSS 过滤工具类
- *
- * @author 阿沐 babamu@126.com
- * <a href="https://maku.net">MAKU</a>
  */
 public class XssUtils {
     /**

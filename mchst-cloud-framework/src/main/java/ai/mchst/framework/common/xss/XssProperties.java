@@ -8,12 +8,9 @@ import java.util.List;
 
 /**
  * XSS 配置项
- *
- * @author 阿沐 babamu@126.com
- * <a href="https://maku.net">MAKU</a>
  */
 @Data
-@ConfigurationProperties(prefix = "maku.xss")
+@ConfigurationProperties(prefix = "mchst.xss")
 public class XssProperties {
     /**
      * 是否开启 XSS
