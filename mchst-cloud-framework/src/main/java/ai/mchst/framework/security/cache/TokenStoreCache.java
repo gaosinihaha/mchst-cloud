@@ -52,4 +52,12 @@ public class TokenStoreCache {
 
         return ListUtil.toList(sets);
     }
+
+    public UserDetail getUserAdmin(String accessToken) {
+        return (UserDetail)redisCache.get(accessToken);
+    }
+
+    public void ref(String accessToken) {
+        redisCache.expire(accessToken,RedisCache.HOUR_ONE_EXPIRE);
+    }
 }

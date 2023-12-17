@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ai.mchst.admin.dao.AdminMuneDao">
+
+    <select id="getUserAuthority" resultType="java.lang.String">
+        select am.authority
+        from admin_user au
+                 left join admin_user_menu um on au.id = um.user_id and um.deleted = '0'
+                 left join admin_menu am on um.menu_id = am.id and am.deleted = '0'
+        where au.deleted = '0'
+          and au.id = #{id}
+    </select>
+</mapper>

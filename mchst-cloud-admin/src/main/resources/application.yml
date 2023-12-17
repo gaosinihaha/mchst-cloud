@@ -1,0 +1,46 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: mchst-cloud-admin
+  cloud:
+    nacos:
+      username: @nacos.username@
+      password: @nacos.password@
+      discovery:
+        server-addr: @nacos.server-addr@
+        namespace: @nacos.namespace@
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+  config:
+    import:
+      - optional:nacos:datasource.yaml
+      - optional:nacos:common.yaml
+  mail:
+    host: smtp.163.com
+    protocol: smtp
+    default-encoding: UTF-8
+    username: mchst_ai@163.com
+    password: IEHQNYKHXCJXQZRU # 填上面生成的授权码
+    test-connection: true
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+constant:
+  mail:
+    subject: "MCHST-注册验证码（ 有效时间为120秒 ）"
+    content: "欢迎注册MCHST！！ 您的邮箱验证码为："
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    resolve-schema-properties: true
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn

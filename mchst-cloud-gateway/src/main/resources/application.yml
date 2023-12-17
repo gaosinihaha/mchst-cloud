@@ -17,11 +17,11 @@ spring:
           order: 999999
           predicates:
             - Path=/**
-        - id: mchst-cloud-new
-          uri: lb://mchst-cloud-new
+        - id: mchst-cloud-admin
+          uri: lb://mchst-cloud-admin
           order: 1
           predicates:
-            - Path=/new/**
+            - Path=/admin/**
           filters:
             - StripPrefix=1
     nacos:

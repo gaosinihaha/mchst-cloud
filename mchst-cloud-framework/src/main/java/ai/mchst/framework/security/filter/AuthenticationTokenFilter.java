@@ -38,6 +38,10 @@ public class AuthenticationTokenFilter extends OncePerRequestFilter {
         // 获取登录用户信息
         UserDetail user = tokenStoreCache.getUser(accessToken);
         if (user == null) {
+           user = tokenStoreCache.getUserAdmin(accessToken);
+           if (null != user)tokenStoreCache.ref(accessToken);
+        }
+        if (user == null) {
             chain.doFilter(request, response);
             return;
         }

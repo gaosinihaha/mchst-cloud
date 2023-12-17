@@ -3,13 +3,11 @@ package ai.mchst.framework.security.user;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * 登录用户信息
@@ -22,6 +20,7 @@ public class UserDetail implements UserDetails {
     private String username;
     private String password;
     private String realName;
+    private String nickName;
     private String avatar;
     private Integer gender;
     private String email;
@@ -61,7 +60,7 @@ public class UserDetail implements UserDetails {
     @Override
     @JsonIgnore
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return authoritySet.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toSet());
+        return null;//authoritySet.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toSet());
     }
 
     @Override

@@ -1,18 +1,17 @@
-package ai.mchst.system.entity;
+package ai.mchst.admin.entity;/*
+ * @Auther:xueya
+ * @Date:2023/12/16
+ * @Description:
+ */
 
 import ai.mchst.framework.mybatis.entity.BaseEntity;
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
-/**
- * 用户
- */
 @Data
-@EqualsAndHashCode(callSuper = false)
-@TableName("sys_user")
-public class SysUserEntity extends BaseEntity {
+@TableName("admin_user")
+public class AdminUserEntity extends BaseEntity {
+
     /**
      * 用户名
      */
@@ -24,7 +23,7 @@ public class SysUserEntity extends BaseEntity {
     /**
      * 姓名
      */
-    private String realName;
+    private String nickName;
     /**
      * 头像
      */
@@ -42,10 +41,6 @@ public class SysUserEntity extends BaseEntity {
      */
     private String mobile;
     /**
-     * 机构ID
-     */
-    private Long orgId;
-    /**
      * 超级管理员   0：否   1：是
      */
     private Integer superAdmin;
@@ -53,13 +48,4 @@ public class SysUserEntity extends BaseEntity {
      * 状态  {@link }
      */
     private Integer status;
-    /**
-     * 机构名称
-     */
-    @TableField(exist = false)
-    private String orgName;
-    /**
-     * 租户ID
-     */
-    private Long tenantId;
 }

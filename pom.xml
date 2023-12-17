@@ -14,6 +14,7 @@
         <module>mchst-cloud-gateway</module>
         <module>mchst-cloud-module</module>
         <module>mchst-cloud-system</module>
+        <module>mchst-cloud-admin</module>
     </modules>
 
     <packaging>pom</packaging>

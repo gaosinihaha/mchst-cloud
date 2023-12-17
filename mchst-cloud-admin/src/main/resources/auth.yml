@@ -1,0 +1,16 @@
+auth:
+  ignore_urls:
+    - /user/register
+    - /user/login
+    - /user/send/**
+    - /v3/api-docs/**
+    - /swagger/**
+    - /swagger-resources/**
+    - /swagger-ui.html
+    - /swagger-ui/**
+    - /doc.html
+    - /api
+    - /**.html
+    - /**.css
+    - /**.js
+    - /
