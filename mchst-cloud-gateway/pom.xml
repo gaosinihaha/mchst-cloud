@@ -7,6 +7,7 @@
         <groupId>ai.mchst</groupId>
         <version>${revision}</version>
     </parent>
+    <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mchst-cloud-gateway</artifactId>

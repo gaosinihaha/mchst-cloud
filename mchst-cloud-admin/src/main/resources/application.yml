@@ -32,6 +32,12 @@ spring:
           starttls:
             enable: true
             required: true
+          ssl:
+            enable: true
+            socketFactory:
+              port: 465
+              class: javax.net.ssl.SSLSocketFactory
+    port: 465
 constant:
   mail:
     subject: "MCHST-注册验证码（ 有效时间为120秒 ）"
